@@ -42,6 +42,19 @@
                 "name": "windows-patches"
             }
          ]
+      },
+      {
+        "name": "windowsgmsa",
+        "count": 1,
+        "vmSize": "Standard_D2_v3",
+        "availabilityProfile": "AvailabilitySet",
+        "osType": "Windows",
+        "osDiskSizeGB": 128,
+        "extensions": [
+            {
+                "name": "gmsa-dc"
+            }
+        ]
       }
     ],
     "windowsProfile": {
@@ -76,6 +89,11 @@
           "version": "v1",
           "rootURL": "https://raw.githubusercontent.com/stanciuoctavian/aks-engine/forceNodeRestart/",
           "extensionParameters": "'http://download.windowsupdate.com/d/msdownload/update/software/updt/2019/05/windows10.0-kb4497934-x64_2a3224347811199634033c289ee046f71639611e.msu'"
+        },
+        {
+          "name": "gmsa-dc",
+          "version": "v1",
+          "rootURL": "https://raw.githubusercontent.com/JeremyWx/aks-engine/master/"
         },
         {
           "name":                "master_extension",
