@@ -39,6 +39,19 @@
                 "name": "agent_preprovision_extension",
                 "singleOrAll": "all"
             }
+      },
+      {
+        "name": "windowsgmsa",
+        "count": 1,
+        "vmSize": "Standard_D2_v3",
+        "availabilityProfile": "AvailabilitySet",
+        "osType": "Windows",
+        "osDiskSizeGB": 128,
+        "extensions": [
+            {
+                "name": "gmsa-dc"
+            }
+        ]
       }
     ],
     "windowsProfile": {
@@ -70,6 +83,11 @@
           "version": "v1",
           "rootURL": "https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/",
           "script":  "node_setup.ps1"
+        },
+        {
+          "name": "gmsa-dc",
+          "version": "v1",
+          "rootURL": "https://raw.githubusercontent.com/JeremyWx/windows-testing/master/"
         },
         {
           "name":                "master_extension",
